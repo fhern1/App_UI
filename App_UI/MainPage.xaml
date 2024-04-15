@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_UI.MainPage">
+
+    <VerticalStackLayout Spacing="20">
+        <!-- WebView for live video feed -->
+        <WebView 
+            HeightRequest="300"
+            Source="https://www.youtube.com"
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand" 
+        />
+
+        <ScrollView>
+            <StackLayout Spacing = "10">
+                <!-- Additional content below the video feed -->
+                <!-- CarouselView declaration -->
+                <Label Text="Notifications" 
+                       Margin="10, 0, 0, 0" 
+                       HorizontalOptions="Start" 
+                       VerticalOptions="Center" 
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       FontFamily="Tauri-Regular"
+                       TextColor="Black"
+                       />
+                <CarouselView ItemsSource="{Binding Items}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="{Binding BackgroundColor}" CornerRadius="10" Padding="10"
+                            Margin="5" HeightRequest="70" WidthRequest="300">
+                                <!-- Adjust the right margin to increase space -->
+                                <StackLayout>
+                                    <Label Text="{Binding Text}" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="Tauri-Regular"/>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <Label Text="Devices" 
+                       Margin="10, 0, 0, 0" 
+                       HorizontalOptions="Start" 
+                       VerticalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       FontFamily="Tauri-Regular"
+                       TextColor="Black"/>
+                <CarouselView ItemsSource="{Binding Items}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="{Binding BackgroundColor}" CornerRadius="10" Padding="10"
+                    Margin="5" HeightRequest="70" WidthRequest="300">
+                                <!-- Adjust the right margin to increase space -->
+                                <StackLayout>
+                                    <Label Text="{Binding Text}" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="Tauri-Regular"/>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <Label Text="Automations" 
+                       Margin="10, 0, 0, 0" 
+                       HorizontalOptions="Start" 
+                       VerticalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       FontFamily="Tauri-Regular"
+                       TextColor="Black"/>
+                <CarouselView ItemsSource="{Binding Items}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="{Binding BackgroundColor}" CornerRadius="10" Padding="10"
+                    Margin="5" HeightRequest="70" WidthRequest="300">
+                                <!-- Adjust the right margin to increase space -->
+                                <StackLayout>
+                                    <Label Text="{Binding Text}" HorizontalOptions="Center" VerticalOptions="Center" FontFamily="Tauri-Regular"/>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </StackLayout>
+        </ScrollView>
+
+
+        <!-- More content below... -->
+    </VerticalStackLayout>
+
+</ContentPage>

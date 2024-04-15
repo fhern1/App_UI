@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_UI.AddDevicePage"
+             Title="Add New Device">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+            <Label Text="Device Name" FontSize="Medium"/>
+            <Entry x:Name="deviceNameEntry" Placeholder="Enter device name"/>
+
+            <Label Text="Device Type" FontSize="Medium"/>
+            <Picker x:Name="deviceTypePicker" Title="Select device type">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Sensor</x:String>
+                        <x:String>DoorLock</x:String>
+                        <x:String>Light</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Device Company" FontSize="Medium"/>
+            <Picker x:Name="deviceCompanyPicker" Title="Select device company">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Philips</x:String>
+                        <x:String>PerceptiCam</x:String>
+                        <x:String>Kuikset</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Is Active?" FontSize="Medium"/>
+            <Switch x:Name="isActiveSwitch"/>
+
+            <Button Text="Add Device" Clicked="OnAddDeviceButtonClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

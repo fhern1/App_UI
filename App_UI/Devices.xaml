@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_UI.Devices"
+             Title="Devices">
+
+    <VerticalStackLayout Spacing="20" Padding="30">
+        <!-- Label at the top -->
+        <Label 
+            Text="IoT Devices"
+            FontSize="24"
+            FontFamily="Tauri-Regular"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" />
+
+        <!-- CollectionView for displaying IoT devices -->
+        <CollectionView x:Name="devicesCollectionView" SelectionMode="Single" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout >
+                        <Label Text="{Binding DeviceName}" FontAttributes="Bold" FontFamily="Tauri-Regular"/>
+                        <Label Text="{Binding IsActive, Converter={StaticResource BoolToActiveStatusConverter}}" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Horizontal layout for Add and Delete buttons -->
+        <HorizontalStackLayout Margin ="20" Padding="10" Spacing="50">
+            <Button Text="Add Device" HorizontalOptions="Start" Clicked="OnAddDeviceClicked" FontFamily="Tauri-Regular"/>
+            <Button Text="Delete Selected" HorizontalOptions="End" Clicked="OnDeleteDeviceClicked" FontFamily="Tauri-Regular"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

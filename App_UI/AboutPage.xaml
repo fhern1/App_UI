@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_UI.AboutPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+
+            <!-- Account Settings Section -->
+            <Frame CornerRadius="10" Padding="10" BackgroundColor="#F0F0F5">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Account Settings" FontAttributes="Bold" FontFamily="Tauri-Regular"/>
+                    <Entry Placeholder="Username"/>
+                    <Entry Placeholder="Email" Keyboard="Email"/>
+                    <Button Text="Change Password"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Notifications Section -->
+            <Frame CornerRadius="10" Padding="10" BackgroundColor="#F0F0F5">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Notifications" FontAttributes="Bold" FontFamily="Tauri-Regular"/>
+                    <Switch HorizontalOptions="Start" IsToggled="True"/>
+                    <Label Text="Enable Notifications"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- General App Settings -->
+            <Frame CornerRadius="10" Padding="10" BackgroundColor="#F0F0F5">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="General" FontAttributes="Bold" FontFamily="Tauri-Regular"/>
+                    <Button Text="Privacy Policy"/>
+                    <Button Text="Terms of Service"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

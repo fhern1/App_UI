@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="App_UI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:App_UI"
+    Shell.FlyoutBehavior="Disabled"
+    Title="App_UI">
+
+    
+    
+    <TabBar>
+        <ShellContent
+            Title="Automation"
+            ContentTemplate="{DataTemplate local:Automation}"
+            Icon="{OnPlatform 'icons8_automation_100.png'}" />
+
+        <ShellContent
+            Title="Devices"
+            ContentTemplate="{DataTemplate local:Devices}"
+            Icon="{OnPlatform 'icons8_internet_of_things_100.png'} " />
+
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Icon="{OnPlatform 'icons8_home_100.png'}" />
+
+        <ShellContent
+            Title="Activity"
+            ContentTemplate="{DataTemplate local:Activity}"
+            Icon="{OnPlatform 'icons8_notification_100.png'}" />
+
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:AboutPage}"
+            Icon="{OnPlatform 'icons8_setting_100.png'}" />
+        
+    </TabBar>
+
+
+</Shell>
